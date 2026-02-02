@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 AIzaSyDjGTDaCkpn8K_GSOzsby0tAxl9WqGg37o
+=======
+AIzaSyDzJwHQiLjy_rLKx10tV56yCrHdfE1HqQw
+AIzaSyDguQzHo_YnhP9og9PM5-5GD0vLGgRYBcw
+>>>>>>> 6f2175e (New commit: EcoRoute project)

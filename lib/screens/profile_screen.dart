@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 
 class ProfileScreen extends StatelessWidget {
 
+=======
+import '../utils/eco.dart';
+
+class ProfileScreen extends StatelessWidget {
+>>>>>>> 6f2175e (New commit: EcoRoute project)
   const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
+=======
+    final double carEmission = calculateCO2('car', 10.0); 
+    final double walkEmission = calculateCO2('walking', 10.0); 
+    final double savedCO2 = carEmission - walkEmission;
+
+>>>>>>> 6f2175e (New commit: EcoRoute project)
     final achievements = [
       {'icon': '🌟', 'title': 'Первый маршрут', 'earned': true},
       {'icon': '🚴', 'title': 'Велолюбитель', 'earned': true},
@@ -15,11 +28,22 @@ class ProfileScreen extends StatelessWidget {
 
     final stats = [
       {'label': 'Всего маршрутов', 'value': '24', 'icon': Icons.bar_chart},
+<<<<<<< HEAD
       {'label': 'CO₂ сэкономлено', 'value': '5.2 кг', 'icon': Icons.eco},
+=======
+      {'label': 'CO₂ сэкономлено', 'value': '${savedCO2.toStringAsFixed(1)} г', 'icon': Icons.eco},
+>>>>>>> 6f2175e (New commit: EcoRoute project)
       {'label': 'Эко-баллы', 'value': '350', 'icon': Icons.emoji_events},
     ];
 
     return Scaffold(
+<<<<<<< HEAD
+=======
+      appBar: AppBar(
+        title: const Text("Профиль"),
+        backgroundColor: Colors.green,
+      ),
+>>>>>>> 6f2175e (New commit: EcoRoute project)
       body: Container(
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -52,10 +76,19 @@ class ProfileScreen extends StatelessWidget {
                           width: 80,
                           height: 80,
                           decoration: BoxDecoration(
+<<<<<<< HEAD
                             color: Colors.white.withAlpha(50),
                             shape: BoxShape.circle,
                           ),
                           child: const Center(child: Text("👤", style: TextStyle(fontSize: 32))),
+=======
+                            color: Colors.white.withOpacity(0.2),
+                            shape: BoxShape.circle,
+                          ),
+                          child: const Center(
+                            child: Text("👤", style: TextStyle(fontSize: 32)),
+                          ),
+>>>>>>> 6f2175e (New commit: EcoRoute project)
                         ),
                         const SizedBox(width: 16),
                         Column(
@@ -70,7 +103,12 @@ class ProfileScreen extends StatelessWidget {
                                 style: TextStyle(color: Colors.white70)),
                             Container(
                               margin: const EdgeInsets.only(top: 8),
+<<<<<<< HEAD
                               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+=======
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 8, vertical: 4),
+>>>>>>> 6f2175e (New commit: EcoRoute project)
                               decoration: BoxDecoration(
                                 color: Colors.green.shade700,
                                 borderRadius: BorderRadius.circular(12),
@@ -81,7 +119,12 @@ class ProfileScreen extends StatelessWidget {
                                   Icon(Icons.park, size: 14, color: Colors.white),
                                   SizedBox(width: 4),
                                   Text("Эко-путешественник",
+<<<<<<< HEAD
                                       style: TextStyle(color: Colors.white, fontSize: 12)),
+=======
+                                      style: TextStyle(
+                                          color: Colors.white, fontSize: 12)),
+>>>>>>> 6f2175e (New commit: EcoRoute project)
                                 ],
                               ),
                             )
@@ -95,7 +138,12 @@ class ProfileScreen extends StatelessWidget {
 
               // Stats
               Padding(
+<<<<<<< HEAD
                 padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+=======
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+>>>>>>> 6f2175e (New commit: EcoRoute project)
                 child: Card(
                   elevation: 4,
                   child: Padding(
@@ -109,9 +157,17 @@ class ProfileScreen extends StatelessWidget {
                             const SizedBox(height: 4),
                             Text(stat['value'] as String,
                                 style: const TextStyle(
+<<<<<<< HEAD
                                     fontWeight: FontWeight.bold, color: Colors.black)),
                             Text(stat['label'] as String,
                                 style: const TextStyle(fontSize: 12, color: Colors.grey)),
+=======
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black)),
+                            Text(stat['label'] as String,
+                                style: const TextStyle(
+                                    fontSize: 12, color: Colors.grey)),
+>>>>>>> 6f2175e (New commit: EcoRoute project)
                           ],
                         );
                       }).toList(),
@@ -122,7 +178,12 @@ class ProfileScreen extends StatelessWidget {
 
               // Achievements
               Padding(
+<<<<<<< HEAD
                 padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+=======
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+>>>>>>> 6f2175e (New commit: EcoRoute project)
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -138,16 +199,31 @@ class ProfileScreen extends StatelessWidget {
                         return Container(
                           margin: const EdgeInsets.all(4),
                           decoration: BoxDecoration(
+<<<<<<< HEAD
                             color: earned ? Colors.green.shade100 : Colors.grey.shade200,
+=======
+                            color: earned
+                                ? Colors.green.shade100
+                                : Colors.grey.shade200,
+>>>>>>> 6f2175e (New commit: EcoRoute project)
                             borderRadius: BorderRadius.circular(8),
                           ),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
+<<<<<<< HEAD
                               Text(ach['icon'] as String, style: const TextStyle(fontSize: 20)),
                               Text(ach['title'] as String,
                                   textAlign: TextAlign.center,
                                   style: const TextStyle(fontSize: 10, color: Colors.black)),
+=======
+                              Text(ach['icon'] as String,
+                                  style: const TextStyle(fontSize: 20)),
+                              Text(ach['title'] as String,
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                      fontSize: 10, color: Colors.black)),
+>>>>>>> 6f2175e (New commit: EcoRoute project)
                             ],
                           ),
                         );
@@ -159,7 +235,12 @@ class ProfileScreen extends StatelessWidget {
 
               // Monthly Progress
               Padding(
+<<<<<<< HEAD
                 padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+=======
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+>>>>>>> 6f2175e (New commit: EcoRoute project)
                 child: Card(
                   child: Padding(
                     padding: const EdgeInsets.all(16),
@@ -178,18 +259,32 @@ class ProfileScreen extends StatelessWidget {
                             ),
                             Text("18/20",
                                 style: TextStyle(
+<<<<<<< HEAD
                                     color: Colors.green, fontWeight: FontWeight.bold)),
+=======
+                                    color: Colors.green,
+                                    fontWeight: FontWeight.bold)),
+>>>>>>> 6f2175e (New commit: EcoRoute project)
                           ],
                         ),
                         const SizedBox(height: 8),
                         LinearProgressIndicator(
                           value: 0.9,
                           color: Colors.green,
+<<<<<<< HEAD
                           backgroundColor: Colors.grey.shade300,
                         ),
                         const SizedBox(height: 8),
                         const Text("Еще 2 поездки до достижения цели!",
                             style: TextStyle(fontSize: 12, color: Colors.grey)),
+=======
+                          backgroundColor: Colors.grey,
+                        ),
+                        const SizedBox(height: 8),
+                        const Text("Еще 2 поездки до достижения цели!",
+                            style:
+                                TextStyle(fontSize: 12, color: Colors.grey)),
+>>>>>>> 6f2175e (New commit: EcoRoute project)
                       ],
                     ),
                   ),
@@ -198,7 +293,12 @@ class ProfileScreen extends StatelessWidget {
 
               // Settings
               Padding(
+<<<<<<< HEAD
                 padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+=======
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+>>>>>>> 6f2175e (New commit: EcoRoute project)
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -223,9 +323,18 @@ class ProfileScreen extends StatelessWidget {
 
               // Logout Button
               Padding(
+<<<<<<< HEAD
                 padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
                 child: OutlinedButton(
                   onPressed: () {},
+=======
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+                child: OutlinedButton(
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, '/login');
+                  },
+>>>>>>> 6f2175e (New commit: EcoRoute project)
                   child: const Text("Выйти из аккаунта"),
                 ),
               )
@@ -252,7 +361,12 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   Text(title, style: const TextStyle(fontSize: 14)),
                   Text(subtitle,
+<<<<<<< HEAD
                       style: const TextStyle(fontSize: 12, color: Colors.grey)),
+=======
+                      style:
+                          const TextStyle(fontSize: 12, color: Colors.grey)),
+>>>>>>> 6f2175e (New commit: EcoRoute project)
                 ],
               )
             ],
@@ -263,3 +377,7 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6f2175e (New commit: EcoRoute project)

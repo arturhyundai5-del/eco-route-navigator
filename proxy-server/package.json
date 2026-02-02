@@ -1,0 +1,19 @@
+{
+  "name": "google-maps-proxy",
+  "version": "1.0.0",
+  "description": "CORS proxy for Google Maps API",
+  "main": "proxy.js",
+  "scripts": {
+    "start": "node proxy.js",
+    "dev": "node proxy.js"
+  },
+  "keywords": ["google-maps", "proxy", "cors"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "node-fetch": "^2.6.11",
+    "dotenv": "^16.3.1"
+  }
+}

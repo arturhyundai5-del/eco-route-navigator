@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 
 // 1. ПРОВЕРЬТЕ ПУТЬ: файл должен лежать в lib/screens/profile_screen.dart
 // Если файл лежит в той же папке, что и этот, удалите 'screens/' из пути.
@@ -25,6 +26,11 @@ class EcoRouteApp extends StatelessWidget {
     );
   }
 }
+=======
+import 'profile_screen.dart';
+import 'route_details_screen.dart';
+import '../utils/eco.dart'; // ✅ импортируем функции экологии
+>>>>>>> 6f2175e (New commit: EcoRoute project)
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -35,6 +41,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   final TextEditingController fromController =
+<<<<<<< HEAD
   TextEditingController(text: "Москва, Красная площадь");
   final TextEditingController toController =
   TextEditingController(text: "Москва, Парк Горького");
@@ -69,6 +76,55 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 
+=======
+      TextEditingController(text: "Москва, Красная площадь");
+  final TextEditingController toController =
+      TextEditingController(text: "Москва, Парк Горького");
+
+  String? selectedTransport;
+  int? ecoPoints;
+  double? co2;
+
+  final transportOptions = [
+    {'id': 'bicycling', 'name': 'Велосипед', 'icon': '🚴'},
+    {'id': 'walking', 'name': 'Пешком', 'icon': '🚶'},
+    {'id': 'transit', 'name': 'Автобус', 'icon': '🚌'},
+    {'id': 'driving', 'name': 'Авто', 'icon': '🚗'},
+  ];
+
+  void _onSearchRoute() {
+    if (selectedTransport == null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text("Выберите транспорт")),
+      );
+      return;
+    }
+
+    // ⚡ считаем эко‑баллы и CO₂ для примера (пусть расстояние 5 км)
+    ecoPoints = calculateEcoPoints(selectedTransport!, 5.0);
+    co2 = calculateCO2(selectedTransport!, 5.0);
+
+    print("Эко-баллы: $ecoPoints, CO₂: $co2 г");
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => RouteDetailsScreen(
+          from: fromController.text,
+          to: toController.text,
+          transport: selectedTransport!,
+        ),
+      ),
+    );
+  }
+
+  void _onNavigateToProfile() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const ProfileScreen()),
+    );
+  }
+>>>>>>> 6f2175e (New commit: EcoRoute project)
 
   @override
   Widget build(BuildContext context) {
@@ -88,12 +144,18 @@ class _HomeScreenState extends State<HomeScreen> {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
+<<<<<<< HEAD
             const Text(
               "Планируйте экологичные маршруты",
               style: TextStyle(color: Colors.grey),
             ),
             const SizedBox(height: 16),
 
+=======
+            const Text("Планируйте экологичные маршруты",
+                style: TextStyle(color: Colors.grey)),
+            const SizedBox(height: 16),
+>>>>>>> 6f2175e (New commit: EcoRoute project)
             Card(
               elevation: 4,
               child: Padding(
@@ -119,6 +181,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
+<<<<<<< HEAD
 
             const SizedBox(height: 16),
 
@@ -131,6 +194,15 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             const SizedBox(height: 8),
 
+=======
+            const SizedBox(height: 16),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text("Выберите транспорт",
+                  style: Theme.of(context).textTheme.titleMedium),
+            ),
+            const SizedBox(height: 8),
+>>>>>>> 6f2175e (New commit: EcoRoute project)
             Expanded(
               child: GridView.count(
                 crossAxisCount: 2,
@@ -142,6 +214,12 @@ class _HomeScreenState extends State<HomeScreen> {
                     onTap: () {
                       setState(() {
                         selectedTransport = option['id'] as String;
+<<<<<<< HEAD
+=======
+                        // ⚡ сразу считаем показатели при выборе
+                        ecoPoints = calculateEcoPoints(selectedTransport!, 5.0);
+                        co2 = calculateCO2(selectedTransport!, 5.0);
+>>>>>>> 6f2175e (New commit: EcoRoute project)
                       });
                     },
                     child: Card(
@@ -156,12 +234,24 @@ class _HomeScreenState extends State<HomeScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
+<<<<<<< HEAD
                           Text(option['icon']!, style: const TextStyle(fontSize: 28)),
                           const SizedBox(height: 8),
                           Text(option['name']!,
                               style: const TextStyle(fontWeight: FontWeight.w500)),
                           Text(option['co2']!,
                               style: const TextStyle(color: Colors.green, fontSize: 12)),
+=======
+                          Text(option['icon']!,
+                              style: const TextStyle(fontSize: 28)),
+                          const SizedBox(height: 8),
+                          Text(option['name']!,
+                              style: const TextStyle(fontWeight: FontWeight.w500)),
+                          if (ecoPoints != null && co2 != null && isSelected)
+                            Text("Эко: $ecoPoints, CO₂: ${co2!.toStringAsFixed(1)} г",
+                                style: const TextStyle(
+                                    color: Colors.green, fontSize: 12)),
+>>>>>>> 6f2175e (New commit: EcoRoute project)
                         ],
                       ),
                     ),
@@ -169,6 +259,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 }).toList(),
               ),
             ),
+<<<<<<< HEAD
 
             // Кнопки управления
             Column(
@@ -193,6 +284,20 @@ class _HomeScreenState extends State<HomeScreen> {
                   label: const Text("Перейти в профиль"),
                 ),
               ],
+=======
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton.icon(
+                onPressed: _onSearchRoute,
+                icon: const Icon(Icons.navigation),
+                label: const Text("Найти маршрут"),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(vertical: 14),
+                ),
+              ),
+>>>>>>> 6f2175e (New commit: EcoRoute project)
             ),
           ],
         ),
