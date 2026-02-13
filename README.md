@@ -17,3 +17,5 @@
 5. **Профиль пользователя:** Визуализация достижений (посаженные виртуальные деревья за счет экономии топлива) и общая статистика.
 
 https://www.figma.com/make/MHNSIlLlYPSdmvjsLc3rZ1/Mobile-App-Interface-Design?p=f&t=K29PMhgiChw7ftbY-0
+
+https://powerpoint.cloud.microsoft/open/onedrive/?docId=B439126F0DAE5D90%21s828b8954ae9b471e8ef9f010baafaa0e&driveId=B439126F0DAE5D90
